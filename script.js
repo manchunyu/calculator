@@ -10,6 +10,23 @@ function multiply(a, b){
     return a * b;
 }
 
-function devide(a, b){
+function divide(a, b){
     return a / b;
+}
+
+function operate(a, op, b){
+    switch (op) {
+        case '+':
+            add(a, b);
+            break;
+        case '-':
+            subtract(a, b);
+            break;
+        case '*':
+            subtract(a, b);
+            break;
+        case '/':
+            divide(a, b);
+    }
+
 }
