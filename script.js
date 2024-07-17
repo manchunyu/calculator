@@ -17,16 +17,13 @@ function divide(a, b){
 function operate(a, op, b){
     switch (op) {
         case '+':
-            add(a, b);
-            break;
+            return add(a, b);
         case '-':
-            subtract(a, b);
-            break;
+            return subtract(a, b);
         case '*':
-            subtract(a, b);
-            break;
+            return subtract(a, b);
         case '/':
-            divide(a, b);
+            return divide(a, b);
     }
 
 }
