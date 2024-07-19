@@ -25,5 +25,12 @@ function operate(a, op, b){
         case '/':
             return divide(a, b);
     }
-
 }
+
+const calculator = document.getElementById('calculator');
+const display = calculator.querySelector('#display');
+calculator.addEventListener('click', event => {
+    const target = event.target;
+    // correction
+    display.textContent += event.target.value;
+})
