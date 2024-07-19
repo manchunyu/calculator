@@ -29,8 +29,13 @@ function operate(a, op, b){
 
 const calculator = document.getElementById('calculator');
 const display = calculator.querySelector('#display');
+let displayValue = '';
+
 calculator.addEventListener('click', event => {
     const target = event.target;
     // correction
-    display.textContent += event.target.value;
+    if (event.target.value) {
+        display.textContent += event.target.value;
+        displayValue = display.textContent;
+    }
 })
