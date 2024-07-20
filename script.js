@@ -29,13 +29,17 @@ function operate(a, op, b){
 
 const calculator = document.getElementById('calculator');
 const display = calculator.querySelector('#display');
+const ac = calculator.querySelector('#ac');
 let displayValue = '';
 
 calculator.addEventListener('click', event => {
-    const target = event.target;
-    // correction
+    
     if (event.target.value) {
         display.textContent += event.target.value;
         displayValue = display.textContent;
+    } else if (event.target.id === 'ac') {
+        console.log(event.target);
+        display.textContent = '';
+        displayValue = '';
     }
 })
