@@ -21,25 +21,34 @@ function operate(a, op, b){
         case '-':
             return subtract(a, b);
         case '*':
-            return subtract(a, b);
+            return multiply(a, b);
         case '/':
             return divide(a, b);
     }
 }
 
-const calculator = document.getElementById('calculator');
-const display = calculator.querySelector('#display');
-const ac = calculator.querySelector('#ac');
-let displayValue = '';
+const calculator = document.getElementById('calculator'),
+        display = calculator.querySelector('#display'),
+        ac = calculator.querySelector('#ac');
+        
+let displayValue = '',
+    operation = '';
 
 calculator.addEventListener('click', event => {
     
-    if (event.target.value) {
-        display.textContent += event.target.value;
-        displayValue = display.textContent;
-    } else if (event.target.id === 'ac') {
-        console.log(event.target);
+    const target = event.target;
+
+    if (target.value) {
+        display.textContent += target.value;
+    } else if (target.id === 'ac') {
         display.textContent = '';
-        displayValue = '';
+        displayValue = '';  
+    } else if (target.id === '+' || target.id === '-'||
+                target.id === '*' || target.id === '/') {
+                    displayValue = +display.textContent;
+                    display.textContent = '';
+                    operation = target.id;
+    } else if (target.id === '=') {
+        display.textContent = operate(displayValue, operation, display.textContent);
     }
 })
