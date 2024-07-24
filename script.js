@@ -30,25 +30,34 @@ function operate(a, op, b){
 const calculator = document.getElementById('calculator'),
         display = calculator.querySelector('#display'),
         ac = calculator.querySelector('#ac');
-        
+
 let displayValue = '',
-    operation = '';
+    operation = '',
+    operated = false;
 
 calculator.addEventListener('click', event => {
     
     const target = event.target;
 
     if (target.value) {
-        display.textContent += target.value;
+        if (display.textContent == 0 || operated === true) {
+            display.textContent = target.value;
+            operated = false;
+        } else if (target.value === '.' && display.textContent.includes('.')){
+            display.textContent = display.textContent;
+        } else {
+            display.textContent += target.value;
+        }
     } else if (target.id === 'ac') {
-        display.textContent = '';
+        display.textContent = 0;
         displayValue = '';  
     } else if (target.id === '+' || target.id === '-'||
                 target.id === '*' || target.id === '/') {
                     displayValue = +display.textContent;
-                    display.textContent = '';
                     operation = target.id;
+                    operated = true;
     } else if (target.id === '=') {
         display.textContent = operate(displayValue, operation, display.textContent);
+        operated = true;
     }
 })
