@@ -59,5 +59,9 @@ calculator.addEventListener('click', event => {
     } else if (target.id === '=') {
         display.textContent = operate(displayValue, operation, display.textContent);
         operated = true;
+    } else if (target.id === '+/-') {
+        display.textContent = -`${display.textContent}`;
+    } else if (target.id === '%') {
+        display.textContent /= 100;
     }
 })
