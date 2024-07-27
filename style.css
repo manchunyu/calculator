@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    border: solid black 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons {
+    display: flex;
+}
+
+
+.miscnum {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+}
+
+.misc {
+    display: flex;
+}
+
+.misc button {
+    flex: auto;
+    flex-basis: 33%;
+    background-color: aqua;
+}
+
+.numbers {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.numbers button {
+    flex: auto;
+    flex-basis: 33%;
+}
+
+.numbers button[value="0"] {
+    flex-basis: 66%;
+}
+
+.operations {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    min-width: 25%;
+}
+
+.operations button {
+    background-color: orange;
+}
+
+button {
+    min-height: 33px;
+}

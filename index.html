@@ -4,37 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script>
+    <link href="style.css" rel="stylesheet">
     <title>Calculator</title>
 </head>
 <body>
     <div class="container" id="calculator">
         <div class="display" id="display">0</div>
-        <div>
-            <div class="misc" id="misc">
-                <button id="ac">AC</button>
-                <button id="+/-">+/-</button>
-                <button id="%">%</button>
+        <div class="buttons">
+            <div class="miscnum">
+                <div class="misc" id="misc">
+                    <button id="ac">AC</button>
+                    <button id="+/-">+/-</button>
+                    <button id="%">%</button>
+                </div>
+                <div class="numbers" id="numbers">
+                    <button id="1" value="1">1</button>
+                    <button id="2" value="2">2</button>
+                    <button id="3" value="3">3</button>
+                    <button id="4" value="4">4</button>
+                    <button id="5" value="5">5</button>
+                    <button id="6" value="6">6</button>
+                    <button id="7" value="7">7</button>
+                    <button id="8" value="8">8</button>
+                    <button id="9" value="9">9</button>
+                    <button id="0" value="0">0</button>
+                    <button id="." value=".">.</button>
+                </div>
             </div>
-            <div class="numbers" id="numbers">
-                <button id="1" value="1">1</button>
-                <button id="2" value="2">2</button>
-                <button id="3" value="3">3</button>
-                <button id="4" value="4">4</button>
-                <button id="5" value="5">5</button>
-                <button id="6" value="6">6</button>
-                <button id="7" value="7">7</button>
-                <button id="8" value="8">8</button>
-                <button id="9" value="9">9</button>
-                <button id="0" value="0">0</button>
-                <button id="." value=".">.</button>
+            <div class="operations" id="operations">
+                <button id="+">+</button>
+                <button id="-">-</button>
+                <button id="*">x</button>
+                <button id='/'>÷</button>
+                <button id="=">=</button>
             </div>
-        </div>
-        <div class="operations" id="operations">
-            <button id="+">+</button>
-            <button id="-">-</button>
-            <button id="*">x</button>
-            <button id='/'>÷</button>
-            <button id="=">=</button>
         </div>
     </div>
     
