@@ -1,20 +1,5 @@
-function add(a, b){
-    return +a + +b;
-}
-
-function subtract(a, b){
-    return a - b;
-}
-
-function multiply(a, b){
-    return a * b;
-}
-
-function divide(a, b){
-    return a / b;
-}
-
 function operate(a, op, b){
+
     switch (op) {
         case '+':
             return add(a, b);
@@ -24,6 +9,22 @@ function operate(a, op, b){
             return multiply(a, b);
         case '/':
             return divide(a, b);
+    }
+
+    function add(a, b){
+        return +a + +b;
+    }
+    
+    function subtract(a, b){
+        return a - b;
+    }
+    
+    function multiply(a, b){
+        return a * b;
+    }
+    
+    function divide(a, b){
+        return a / b;
     }
 }
 
@@ -64,4 +65,11 @@ calculator.addEventListener('click', event => {
     } else if (target.id === '%') {
         display.textContent /= 100;
     }
-})
+});
+
+document.addEventListener('keydown', event => {
+
+    const key = event.key;
+
+    console.log(key);
+}); 
