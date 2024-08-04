@@ -57,16 +57,15 @@ calculator.addEventListener('click', event => {
                     // Not optimized
                     if (!operation) {
                         displayValue = +display.textContent;
-                        operation = target.id;
-                        operated = true;
                     } else {
                         display.textContent = operate(displayValue, operation, display.textContent);
                         displayValue = +display.textContent;
-                        operation = target.id;
-                        operated = true;
                     }
+                    operation = target.id;
+                    operated = true;
     } else if (target.id === '=') {
         display.textContent = operate(displayValue, operation, display.textContent);
+        operation = false;
         operated = true;
     } else if (target.id === '+/-') {
         display.textContent = -`${display.textContent}`;
