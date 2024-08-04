@@ -30,7 +30,10 @@ function operate(a, op, b){
 
 const calculator = document.getElementById('calculator'),
         display = calculator.querySelector('#display'),
-        ac = calculator.querySelector('#ac');
+        ac = calculator.querySelector('#ac'),
+        btns = [...calculator.querySelectorAll('button')];
+
+console.log(btns);
 
 let displayValue = '',
     operation = '',
@@ -51,7 +54,8 @@ calculator.addEventListener('click', event => {
         }
     } else if (target.id === 'ac') {
         display.textContent = 0;
-        displayValue = '';  
+        operation = '';  
+        displayValue = '';
     } else if (target.id === '+' || target.id === '-'||
                 target.id === '*' || target.id === '/') {
                     // Not optimized
@@ -64,9 +68,13 @@ calculator.addEventListener('click', event => {
                     operation = target.id;
                     operated = true;
     } else if (target.id === '=') {
-        display.textContent = operate(displayValue, operation, display.textContent);
-        operation = false;
-        operated = true;
+        if (operation) {
+            display.textContent = operate(displayValue, operation, display.textContent);
+            operation = '';
+            operated = true;
+        } else {
+            display.textContent = display.textContent;
+        }
     } else if (target.id === '+/-') {
         display.textContent = -`${display.textContent}`;
     } else if (target.id === '%') {
@@ -76,7 +84,12 @@ calculator.addEventListener('click', event => {
 
 document.addEventListener('keydown', event => {
 
-    const key = event.key;
+    const clickEvent = new Event('click', {bubbles: true});
 
-    console.log(key);
+    for (const btn of btns) {
+        if (btn.id === event.key) {
+            btn.dispatchEvent(clickEvent);
+            break;
+        }
+    }
 }); 
