@@ -81,10 +81,19 @@ document.addEventListener('keydown', event => {
 
     const clickEvent = new Event('click', {bubbles: true});
 
-    for (const btn of btns) {
-        if (btn.id === event.key) {
-            btn.dispatchEvent(clickEvent);
-            break;
+    if (event.key === 'Enter'){
+        const btn = document.getElementById('=');
+        btn.dispatchEvent(clickEvent);
+    } else if (event.key === 'Escape') {
+        const btn = document.getElementById('ac');
+        btn.dispatchEvent(clickEvent);
+    } else {
+        for (const btn of btns) {
+            if (btn.id === event.key) {
+                btn.dispatchEvent(clickEvent);
+                break;
+            }
         }
     }
+    console.log(event.key);
 }); 
