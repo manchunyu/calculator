@@ -13,16 +13,13 @@ function operate(a, op, b){
 
     function add(a, b){
         return +a + +b;
-    }
-    
+    }   
     function subtract(a, b){
         return a - b;
-    }
-    
+    }   
     function multiply(a, b){
         return a * b;
-    }
-    
+    }  
     function divide(a, b){
         return a / b;
     }
@@ -32,8 +29,6 @@ const calculator = document.getElementById('calculator'),
         display = calculator.querySelector('#display'),
         ac = calculator.querySelector('#ac'),
         btns = [...calculator.querySelectorAll('button')];
-
-console.log(btns);
 
 let displayValue = '',
     operation = '',
