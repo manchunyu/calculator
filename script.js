@@ -76,7 +76,7 @@ calculator.addEventListener('click', event => {
         display.textContent /= 100;
     }
 
-    if (display.textContent == 'NaN'|| display.textContent == Infinity){
+    if (display.textContent == 'NaN'|| Math.abs(display.textContent) == Infinity){
         display.textContent = 'Math Error';
     }
 });
