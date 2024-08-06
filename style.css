@@ -33,7 +33,7 @@ body {
 .misc button {
     flex: auto;
     flex-basis: 33%;
-    background-color: aqua;
+    background-color: rgb(16, 240, 240);
 }
 
 .numbers {

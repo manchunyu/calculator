@@ -87,6 +87,14 @@ document.addEventListener('keydown', event => {
     } else if (event.key === 'Escape') {
         const btn = document.getElementById('ac');
         btn.dispatchEvent(clickEvent);
+    } else if (event.key === 'Backspace') {
+        let arr = display.textContent.split('');
+        arr.pop();
+        display.textContent = arr.join('');
+
+        if (arr.length === 0) {
+            display.textContent = '0';
+        }
     } else {
         for (const btn of btns) {
             if (btn.id === event.key) {
@@ -95,4 +103,5 @@ document.addEventListener('keydown', event => {
             }
         }
     }
+    console.log(event.key);
 }); 
