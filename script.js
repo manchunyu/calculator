@@ -75,6 +75,10 @@ calculator.addEventListener('click', event => {
     } else if (target.id === '%') {
         display.textContent /= 100;
     }
+
+    if (display.textContent == 'NaN'|| display.textContent == Infinity){
+        display.textContent = 'Math Error';
+    }
 });
 
 document.addEventListener('keydown', event => {
