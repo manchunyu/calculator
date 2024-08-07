@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     font-size: x-large;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 body {
@@ -14,6 +15,11 @@ body {
     border: solid black 5px;
     display: flex;
     flex-direction: column;
+}
+
+.display {
+    text-align: end;
+    font-size: xx-large;
 }
 
 .buttons {
