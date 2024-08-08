@@ -53,7 +53,6 @@ calculator.addEventListener('click', event => {
         displayValue = '';
     } else if (target.id === '+' || target.id === '-'||
                 target.id === '*' || target.id === '/') {
-                    // Not optimized
                     if (!operation) {
                         displayValue = +display.textContent;
                     } else {
